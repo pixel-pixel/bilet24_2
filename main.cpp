@@ -10,12 +10,12 @@ struct Tree{
     }
 };
 
-int smallerThen(Tree* tr, int a){
+int smallerThan(Tree* tr, int a){
     if(tr == nullptr) return 0;
 
     int result = 0;
     if(tr->val < a) result++;
-    result += smallerThen(tr->left, a) + smallerThen(tr->right, a);
+    result += smallerThan(tr->left, a) + smallerThan(tr->right, a);
 
     return result;
 }
@@ -28,6 +28,6 @@ int smallerThen(Tree* tr, int a){
 //    tr.left->right = new Tree(4);
 //    tr.left->right->left = new Tree(1);
 //
-//    std::cout << smallerThen(&tr, 5);
+//    std::cout << smallerThan(&tr, 5);
 //    return 0;
 //}
